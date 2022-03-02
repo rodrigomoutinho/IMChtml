@@ -1,0 +1,36 @@
+<center><div>
+    <input type="text" id="idade" placeholder="Ano de nascimento?">
+    <button type="submit" onclick="calcular()">Calcular Idade</button>
+    <p id="resultado">Resultado</p>
+</center>
+</div>
+
+<center>
+
+<footer>
+    <h4>Escolha a cor da pagina:</h4>
+    <input type="button" value="Red MODE" onclick="chBackcolor('red');">
+    <input type="button" value="Blue MODE" onclick="chBackcolor('blue');">
+    <input type="button" value="Green MODE" onclick="chBackcolor('green');">
+    <input type="button" value="Yellow MODE" onclick="chBackcolor('yellow');">
+
+</center>
+</footer>
+
+<script>
+    function chBackcolor(color) {
+        document.body.style.background = color;
+    }
+
+</script>
+
+<script>
+    function calcular() {
+        const nasc = parseInt(document.getElementById("idade").value);
+        var dataAtual = new Date();
+        var anoAtual = dataAtual.getFullYear();
+        var anoNasc = anoAtual - nasc;
+        document.getElementById("resultado").innerHTML = "Sua idade é: " + anoNasc;
+
+    }
+</script>
